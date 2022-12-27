@@ -1,0 +1,22 @@
+{{#if products}}
+<table class="table mt-3 mx-auto w-50 border border-3">
+    <thead>
+        <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+            {{#each products}}
+                    <tr>
+                        <td>{{this.title}}</td>
+                        <td>${{this.price}}</td>
+                        <td><img style="width: 70px;" src="{{this.thumbnail}}" alt="{{this.title}}"></td>
+                    </tr>
+            {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p class="text-center">No hay productos</p>
+{{/if}}

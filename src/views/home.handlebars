@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Home</title>
+</head>
+
+<body>
+    <h2 class="text-center my-3">Ingrese producto</h2>
+
+    <hr>
+
+    <div class="mb-3 mx-3">
+        <form id="productForm">
+
+            <label for="title" class="form-label">Producto</label>
+            <input type="text" class="form-control mx-auto" id="title" name="title">
+
+            <label for="price" class="form-label">Precio</label>
+            <input type="number" class="form-control mx-auto" id="price" name="price">
+
+            <label for="thumbnail" class="form-label">Imagen</label>
+            <input type="text" class="form-control mx-auto" id="thumbnail" name="thumbnail">
+
+            <button class="btn btn-dark d-block mt-3 mx-auto" type="submit">Enviar</button>
+
+        </form>
+    </div>
+
+    <div id="productsContainer"></div>
+
+    <hr>
+
+    <div class="bg-light rounded p-2 w-75 mx-auto">
+        <h2 class="text-center">Chat</h2>
+        <h3 class="text-center" id="porcentajeCompresion"></h3>
+
+        <div>
+            <form id="chatForm">
+                <input type="text" class="w-75 mx-auto form-control" id="messageChat" name="messageChat" placeholder="Ingrese su mensaje">
+                <button class="mt-3 d-block mx-auto btn btn-dark" type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div class="mx-auto ps-3 my-3 w-75 " id="chatContainer"></div>
+
+    </div>
+
+    {{> importScripts }}
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="home.js"></script>
+</body>
+
+</html>

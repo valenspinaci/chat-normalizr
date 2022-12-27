@@ -1,0 +1,106 @@
+[
+  {
+    "author": {
+      "email": "vspinaci@gmail.com",
+      "nombre": "Valentino",
+      "apellido": "Spinaci",
+      "edad": "22",
+      "alias": "vspinaci",
+      "avatar": "jajaja"
+    },
+    "date": "27/12/2022, 10:45:16",
+    "text": "Bienvenidos!",
+    "id": 1
+  },
+  {
+    "author": {
+      "email": "vspinaci@gmail.com",
+      "nombre": "Valentino",
+      "apellido": "Spinaci",
+      "edad": "22",
+      "alias": "vspinaci",
+      "avatar": "jajaja"
+    },
+    "date": "27/12/2022, 10:45:49",
+    "text": "Como andas?",
+    "id": 2
+  },
+  {
+    "author": {
+      "email": "jgarcia@gmail.com",
+      "nombre": "Juan",
+      "apellido": "Garcia",
+      "edad": "32",
+      "alias": "jgarcia",
+      "avatar": "jajaja"
+    },
+    "date": "27/12/2022, 10:53:18",
+    "text": "Hola Valen",
+    "id": 3
+  },
+  {
+    "author": {
+      "email": "jgarcia@gmail.com",
+      "nombre": "Juan",
+      "apellido": "Garcia",
+      "edad": "32",
+      "alias": "jgarcia",
+      "avatar": "jajaja"
+    },
+    "date": "27/12/2022, 10:53:23",
+    "text": "Bien y vos?",
+    "id": 4
+  },
+  {
+    "author": {
+      "email": "jgarcia@gmail.com",
+      "nombre": "Juan",
+      "apellido": "Garcia",
+      "edad": "32",
+      "alias": "jgarcia",
+      "avatar": "jajaja"
+    },
+    "date": "27/12/2022, 10:53:33",
+    "text": "Que andas haciendo?",
+    "id": 5
+  },
+  {
+    "author": {
+      "email": "vborsani@gmail.com",
+      "nombre": "Vanina",
+      "apellido": "Borsani",
+      "edad": "19",
+      "alias": "vborsani",
+      "avatar": "jajaja"
+    },
+    "date": "27/12/2022, 12:20:45",
+    "text": "Hola chicos!",
+    "id": 6
+  },
+  {
+    "author": {
+      "email": "vborsani@gmail.com",
+      "nombre": "Vanina",
+      "apellido": "Borsani",
+      "edad": "19",
+      "alias": "vborsani",
+      "avatar": "jajaja"
+    },
+    "date": "27/12/2022, 12:21:28",
+    "text": "Yo estoy cocinando una torta",
+    "id": 7
+  },
+  {
+    "author": {
+      "email": "vborsani@gmail.com",
+      "nombre": "Vanina",
+      "apellido": "Borsani",
+      "edad": "19",
+      "alias": "vborsani",
+      "avatar": "jajaja"
+    },
+    "date": "27/12/2022, 12:21:40",
+    "text": "A la tarde voy a dormir la siesta",
+    "id": 8
+  }
+]
