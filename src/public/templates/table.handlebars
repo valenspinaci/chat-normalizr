@@ -8,13 +8,13 @@
         </tr>
     </thead>
     <tbody>
-            {{#each products}}
-                    <tr>
-                        <td>{{this.title}}</td>
-                        <td>${{this.price}}</td>
-                        <td><img style="width: 70px;" src="{{this.thumbnail}}" alt="{{this.title}}"></td>
-                    </tr>
-            {{/each}}
+        {{#each products}}
+            <tr>
+                <td>{{title}}</td>
+                <td>${{price}}</td>
+                <td><img style="width: 70px;" src="{{thumbnail}}" alt="{{title}}"></td>
+            </tr>
+        {{/each}}
     </tbody>
 </table>
 {{else}}

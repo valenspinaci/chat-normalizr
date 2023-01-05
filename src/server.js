@@ -8,6 +8,9 @@ import { fileURLToPath } from 'url';
 import {faker} from "@faker-js/faker";
 import { Contenedor } from "./index.js";
 import { normalize, schema } from "normalizr";
+import session from "express-session";
+import cookieParser from "cookie-parser";
+import MongoStore from "connect-mongo";
 faker.locale = "es"
 
 const {commerce, image} = faker;
@@ -37,6 +40,19 @@ app.set("views", __dirname + "/views");
 
 //Indicar el motor que usaré en express
 app.set("view engine", "handlebars");
+
+//Cookie parser
+app.use(cookieParser());
+
+//Configuracion de la sesion
+app.use(session({
+    store: MongoStore.create({
+        mongoUrl: options.mongoAtlas.urlDB
+    }),
+    secret: "claveSecreta",
+    resave: false,
+    saveUninitialized: false
+}))
 
 //Configurar websocket del lado del servidor
 const io = new Server(server);
@@ -91,10 +107,16 @@ const normalizarMensajes = async()=>{
 
 //Rutas
 app.get("/", async (req, res) => {
-    res.render("home", {
-        products: products,
-        messages: messages
-    })
+    console.log(req.session)
+    if(req.session.username){
+        res.render("home", {
+            products: products,
+            messages: messages,
+            user: req.session.username
+        })
+    }else{
+        res.redirect("/login")
+    }
 })
 
 app.get("/api/productos-test", async(req,res)=>{
@@ -111,3 +133,26 @@ app.get("/api/productos-test", async(req,res)=>{
     })
 })
 
+app.get("/login", (req,res)=>{
+    if(req.session.username){
+        res.redirect("/")
+    }else{
+        res.render("login")
+    }
+})
+
+app.post("/login",(req,res)=>{
+    console.log(req.body)
+    const {name} = req.body;
+    req.session.username = name;
+    console.log(req.session);
+    res.redirect("/")
+})
+
+app.get("/logout", (req,res)=>{
+    const user = req.session.username;
+    req.session.destroy(error=>{
+        if(error) return res.redirect("/");
+        res.render("logout", {user:user})
+    })
+})

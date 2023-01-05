@@ -4,21 +4,21 @@ const socketClient = io();
 
 //Productos
 const productForm = document.getElementById("productForm");
-productForm.addEventListener("submit", (e) => {
+productForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const product = {
         title: document.getElementById("title").value,
         price: document.getElementById("price").value,
         thumbnail: document.getElementById("thumbnail").value
     };
-    socketClient.emit("newProduct", product);
+    await socketClient.emit("newProduct", product);
     productForm.reset()
 })
 
 const productsContainer = document.getElementById("productsContainer");
 
 socketClient.on("products", async (data) => {
-    console.log(data);
+    console.log(data)
     const templateTable = await fetch("./templates/table.handlebars")
     const templateFormat = await templateTable.text();
     const template = Handlebars.compile(templateFormat);

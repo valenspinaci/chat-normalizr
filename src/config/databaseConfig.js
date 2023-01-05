@@ -21,6 +21,9 @@ const options = {
             filename: path.join(__dirname, "../DB/chatDB.sqlite")
         },
         useNullAsDefault:true
+    },
+    mongoAtlas:{
+        urlDB: "mongodb+srv://valenspinaci:Valentino26@backend-coder.ksqybs9.mongodb.net/sessions?retryWrites=true&w=majority"
     }
 }
 
