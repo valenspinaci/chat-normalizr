@@ -60,7 +60,7 @@ socketClient.on("messagesChat", (data) => {
 let user = "";
 
 Swal.fire({
-    title: 'Formulario login',
+    title: 'Formulario Chat',
     html: `<input type="email" id="email" class="swal2-input" placeholder="Mail">
     <input type="text" id="nombre" class="swal2-input" placeholder="Nombre">
     <input type="text" id="apellido" class="swal2-input" placeholder="Apellido">

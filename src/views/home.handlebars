@@ -13,10 +13,11 @@
 </head>
 
 <body>
-    <div class="d-flex flex-row justify-content-around pt-3">
+    <div class="d-flex flex-column align-items-center pt-3 text-bg-dark">
             <h2>Bienvenido, {{user}}!</h2>
-            <button class="btn btn-dark" onclick="location.href=`/logout`">Cerrar sesion</button>
+            <button class="btn btn-danger my-3" onclick="location.href=`/logout`">Cerrar sesion</button>
     </div>
+
     <h2 class="text-center my-3">Ingrese producto</h2>
 
     <hr>
@@ -24,14 +25,14 @@
     <div class="mb-3 mx-3">
         <form id="productForm">
 
-            <label for="title" class="form-label">Producto</label>
-            <input type="text" class="form-control mx-auto" id="title" name="title">
+            <label for="title" class="form-label w-75 d-block mx-auto">Producto</label>
+            <input type="text" class="form-control mx-auto w-75" id="title" name="title">
 
-            <label for="price" class="form-label">Precio</label>
-            <input type="number" class="form-control mx-auto" id="price" name="price">
+            <label for="price" class="form-label  w-75 d-block mx-auto">Precio</label>
+            <input type="number" class="form-control mx-auto w-75" id="price" name="price">
 
-            <label for="thumbnail" class="form-label">Imagen</label>
-            <input type="text" class="form-control mx-auto" id="thumbnail" name="thumbnail">
+            <label for="thumbnail" class="form-label  w-75 d-block mx-auto">Imagen</label>
+            <input type="text" class="form-control mx-auto w-75" id="thumbnail" name="thumbnail">
 
             <button class="btn btn-dark d-block mt-3 mx-auto" type="submit">Enviar</button>
 

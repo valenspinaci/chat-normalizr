@@ -13,10 +13,10 @@
 </head>
 
 <body class="text-bg-dark vh-100 d-flex flex-column justify-content-center">
-    <h1 class="text-center mt-2">Ingreso</h1>
+    <h1 class="text-center mt-2">Registro</h1>
     <div>
 
-        <form action="/login" method="post">
+        <form action="/signup" method="post">
             <div class="mb-3">
                 <label for="mail" class="form-label w-75 d-block mx-auto">Correo</label>
                 <input type="email" class="form-control w-75 mx-auto" id="mail" name="mail" placeholder="Ingresá tu correo">
@@ -24,13 +24,13 @@
 
             <div class="mb-3">
                 <label for="password" class="form-label w-75 d-block mx-auto">Contraseña</label>
-                <input type="text" class="form-control w-75 mx-auto" id="password" name="password" placeholder="Ingresá tu contraseña">
+                <input type="text" class="form-control w-75 mx-auto" id="password" name="password" placeholder="Creá tu contraseña">
             </div>
 
-            <button type="submit" class="btn btn-primary d-block mx-auto">Ingresar</button>
+            <button type="submit" class="btn btn-primary d-block mx-auto">Registrarme</button>
         </form>
 
-        <p class="text-center mt-3">No tienes cuenta? <a href="/signup">Registrate aquí</a></p>
+        <p class="text-center mt-3">Ya tienes cuenta? <a href="/login">Ingresa aquí</a></p>
 </div>
 </body>
 
