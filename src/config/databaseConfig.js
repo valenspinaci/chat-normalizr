@@ -1,5 +1,9 @@
 import path from "path";
 import { fileURLToPath } from 'url';
+import { envConfig } from "../envConfig.js";
+
+const MARIA_DB = envConfig.MARIA_DB
+const SQLITE_DB = envConfig.SQLITE_DB
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -12,13 +16,13 @@ const options = {
             host:"127.0.0.1",
             user:"root",
             password:"",
-            database:"chatDatabase"
+            database: MARIA_DB
         }
     },
     sqliteDB:{
         client:"sqlite",
         connection:{
-            filename: path.join(__dirname, "../DB/chatDB.sqlite")
+            filename: path.join(__dirname, `../DB/${SQLITE_DB}`)
         },
         useNullAsDefault:true
     },

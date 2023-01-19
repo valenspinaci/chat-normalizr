@@ -1,4 +1,4 @@
-import express from "express";
+import express, { query } from "express";
 import handlebars from "express-handlebars";
 import {Server} from "socket.io"
 import {ContenedorMysql} from "./managers/ContenedorMysql.js"
@@ -15,16 +15,23 @@ import mongoose from "mongoose";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import { userModel } from "./models/user.js";
-import bcrypt from "bcryptjs"
+import bcrypt from "bcryptjs";
+import  parseArgs  from "minimist";
+import { randomNumbers } from "./randoms.js";
+import { fork } from "child_process";
+
+const argOptions = {default:{p:8080}}
+
+const argumentos = parseArgs(process.argv.slice(2), argOptions)
 
 faker.locale = "es"
 
 //Conexion a base mongoose
-mongoose.connect("mongodb+srv://valenspinaci:Valentino26@backend-coder.ksqybs9.mongodb.net/proyectoFinal?retryWrites=true&w=majority",{
+mongoose.connect(`mongodb+srv://valenspinaci:Valentino26@backend-coder.ksqybs9.mongodb.net/proyectoFinal?retryWrites=true&w=majority`,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, (error)=>{
-    if(error) console.log("Conexión fallida")
+    if(error) console.log(error)
     console.log("Base de datos conectada")
 })
 
@@ -43,7 +50,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"))
 
-const PORT = 8080 || process.env.PORT;
+const PORT = argumentos.p;
 
 const server = app.listen(PORT, () => console.log(`Servidor inicializado en el puerto ${PORT}`));
 
@@ -259,5 +266,34 @@ app.get("/logout", (req,res)=>{
     req.session.destroy(error=>{
         if(error) return res.redirect("/home");
         res.render("logout", {user:user})
+    })
+})
+
+app.get("/info", (req,res)=>{
+    res.json({
+        "Argumentos de entrada": process.argv.slice(2),
+        "Sistema operativo" : process.platform,
+        "Version Node": process.version,
+        "Memoria reservada" : process.memoryUsage(),
+        "Path": process.title,
+        "Process ID": process.pid,
+        "Carpeta": process.cwd()
+    })
+})
+
+app.get("/api/randoms", (req,res)=>{
+    let {cant} = req.query
+    const child = fork("src/child.js")
+    child.on("message",(childMsg)=>{
+        if(childMsg == "Hijo listo"){
+            child.send("Iniciar")
+        }else{
+                if(cant){
+                    res.json(randomNumbers(cant))
+                }else{
+                    cant = 100000000;
+                    res.json(randomNumbers(cant));
+                }
+        }
     })
 })
