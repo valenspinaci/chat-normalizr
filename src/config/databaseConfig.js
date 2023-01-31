@@ -1,13 +1,10 @@
-import path from "path";
-import { fileURLToPath } from 'url';
+import __dirname from "../util.js";
+import  path from "path";
 import { envConfig } from "../envConfig.js";
+
 
 const MARIA_DB = envConfig.MARIA_DB
 const SQLITE_DB = envConfig.SQLITE_DB
-
-const __filename = fileURLToPath(import.meta.url);
-
-const __dirname = path.dirname(__filename);
 
 const options = {
     mariaDB:{
@@ -22,7 +19,7 @@ const options = {
     sqliteDB:{
         client:"sqlite",
         connection:{
-            filename: path.join(__dirname, `../DB/${SQLITE_DB}`)
+            filename: path.join(__dirname, `/DB/${SQLITE_DB}`)
         },
         useNullAsDefault:true
     },

@@ -5,6 +5,7 @@ import {ContenedorMysql} from "./managers/ContenedorMysql.js"
 import { options } from "./config/databaseConfig.js"
 import path from 'path';
 import { fileURLToPath } from 'url';
+import __dirname from "./util.js";
 import {faker} from "@faker-js/faker";
 import { Contenedor } from "./index.js";
 import { normalize, schema } from "normalizr";
@@ -19,8 +20,10 @@ import bcrypt from "bcryptjs";
 import  parseArgs  from "minimist";
 import { randomNumbers } from "./randoms.js";
 import { fork } from "child_process";
+import cluster from "cluster";
+import os from "os";
 
-const argOptions = {default:{p:8080}}
+const argOptions = {default:{p:8080, m:"FORK"}}
 
 const argumentos = parseArgs(process.argv.slice(2), argOptions)
 
@@ -32,14 +35,10 @@ mongoose.connect(`mongodb+srv://valenspinaci:Valentino26@backend-coder.ksqybs9.m
     useUnifiedTopology: true
 }, (error)=>{
     if(error) console.log(error)
-    console.log("Base de datos conectada")
 })
 
 const {commerce, image} = faker;
 
-const __filename = fileURLToPath(import.meta.url);
-
-const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -51,8 +50,22 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"))
 
 const PORT = argumentos.p;
+const MODO = argumentos.m;
 
-const server = app.listen(PORT, () => console.log(`Servidor inicializado en el puerto ${PORT}`));
+//Logica del cluster
+if(MODO === "CLUSTER" && cluster.isPrimary){
+    const numCpus = os.cpus().length;
+    for(let i = 0; i<numCpus; i++){
+        cluster.fork()
+    }
+    cluster.on("exit",(worker)=>{
+        console.log(`El proceso ${worker.process.pid} ha dejado de funcionar`);
+        cluster.fork()
+    })
+}else{
+    const server = app.listen(PORT, () => console.log(`Servidor inicializado en el puerto ${PORT} y proceso ${process.pid}`));
+}
+
 
 //Configurar servidor para indicarle que usaremos motor de plantillas
 app.engine("handlebars", handlebars.engine());
@@ -80,56 +93,6 @@ app.use(session({
 //Vinculacion de passport con el servidor
 app.use(passport.initialize());
 app.use(passport.session());
-
-//Configurar websocket del lado del servidor
-const io = new Server(server);
-
-io.on("connection", async (socket) => {
-    console.log("Nuevo cliente conectado");
-    //Productos
-    //Cada vez que socket se conecte le envio los productos
-    socket.emit("products", await products.getAll());
-    socket.on("newProduct", async (data) => {
-        await products.save(data);
-        io.sockets.emit("products", await products.getAll())
-});
-
-//Normalizacion
-//Definir esquemas
-const authorSchema = new schema.Entity("authors",{},{idAttribute:"email"})//Id con el valor del campo email
-const messageSchema = new schema.Entity("messages",{
-    author:authorSchema
-})
-
-//Esquema global
-const chatSchema = new schema.Entity("chats",{
-    messages:[messageSchema]
-})
-
-//Aplicar la normalizacion
-//Funcion que normaliza datos
-const normalizarData= (data)=>{
-    const dataNormalizada = normalize({id:"chatHistory", messages:data}, chatSchema);
-    return dataNormalizada;
-}
-
-//Funcion que normaliza mensajes
-const normalizarMensajes = async()=>{
-    const mensajes = await messages.getAll();
-    const mensajesNormalizados = normalizarData(mensajes);
-    return mensajesNormalizados;
-}
-
-
-//Chat
-//Enviar los mensajes al cliente
-io.sockets.emit("messagesChat", await normalizarMensajes());
-socket.on("newMsg", async(data)=>{
-    await messages.save(data);
-    //Enviamos los mensajes a todos los sockets que esten conectados.
-    io.sockets.emit("messagesChat", await normalizarMensajes())
-    })
-})
 
 //Config serializacion y deserializacion
 passport.serializeUser((user,done)=>{
@@ -186,6 +149,7 @@ passport.use("loginStrategy", new LocalStrategy(
         })
     }
 ))
+
 
 //Rutas
 app.get("/home", async (req, res) => {
