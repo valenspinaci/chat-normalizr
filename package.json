@@ -3,21 +3,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "createTables": "node src/scripts/createTables.js",
     "start": "nodemon src/server.js",
-    "build": "babel src -d build",
-    "pm2-fork":"pm2 start src/server.js" 
+    "start-0x": "0x src/server.js",
+    "test": "node src/benchmark.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
+    "0x": "^5.4.1",
+    "autocannon": "^7.10.0",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.3",
     "child-process": "^1.0.2",
+    "compression": "^1.7.4",
     "connect-mongo": "^4.6.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
@@ -25,6 +28,7 @@
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "knex": "^2.3.0",
+    "log4js": "^6.7.1",
     "minimist": "^1.2.7",
     "mongoose": "^6.8.3",
     "mysql": "^2.18.1",
@@ -35,11 +39,5 @@
     "socket.io": "^4.5.3",
     "sqlite3": "^5.1.2",
     "sweetalert2": "^11.6.8"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.20.7",
-    "@babel/core": "^7.20.12",
-    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
-    "@babel/preset-env": "^7.20.2"
   }
 }

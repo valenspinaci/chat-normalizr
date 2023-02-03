@@ -1,0 +1,9 @@
+[2023-02-02T17:02:23.940] [WARN] warns - Ruta: /, Metodo:GET
+[2023-02-02T17:03:53.557] [WARN] warns - Ruta: /hola, Metodo:GET
+[2023-02-02T17:12:21.913] [WARN] warns - Ruta: /socket.io/socket.io.js, Metodo:GET
+[2023-02-02T17:12:30.650] [WARN] warns - Ruta: /socket.io/socket.io.js, Metodo:GET
+[2023-02-02T19:33:56.639] [WARN] warns - Ruta: /, Metodo:GET
+[2023-02-02T19:33:56.655] [WARN] warns - Ruta: /favicon.ico, Metodo:GET
+[2023-02-02T19:40:46.686] [WARN] warns - Ruta: /favicon.ico, Metodo:GET
+[2023-02-02T19:42:42.546] [WARN] warns - Ruta: /favicon.ico, Metodo:GET
+[2023-02-02T20:28:47.471] [WARN] warns - Ruta: /, Metodo:GET

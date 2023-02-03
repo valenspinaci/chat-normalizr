@@ -1,5 +1,3 @@
-console.log("JS home view");
-
 const socketClient = io();
 
 //Productos
@@ -44,9 +42,10 @@ const chatContainer = document.getElementById("chatContainer");
 const compresion = document.getElementById("porcentajeCompresion");
 
 socketClient.on("messagesChat", (data) => {
-    const compresionNormalizada = ("Data normalizada: ", JSON.stringify(data, null, "\t").length);
+    console.log(data)
     const dataMsg = normalizr.denormalize(data.result, chatSchema, data.entities);
-    const compresionNormal = ("Data normal: ", JSON.stringify(dataMsg, null, "\t").length);
+    const compresionNormalizada = ("Data normalizada: ", JSON.stringify(data, null, "\t").length);
+    const compresionNormal = ("Data normal: ", (JSON.stringify(dataMsg, null, "\t").length));
     const porcentajeCompresion = (parseInt(100 - (compresionNormalizada/compresionNormal*100)))
     let message = " ";
     dataMsg.messages.forEach(element => {

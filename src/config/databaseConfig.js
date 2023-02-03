@@ -3,7 +3,6 @@ import  path from "path";
 import { envConfig } from "../envConfig.js";
 
 
-const MARIA_DB = envConfig.MARIA_DB
 const SQLITE_DB = envConfig.SQLITE_DB
 
 const options = {
@@ -13,7 +12,7 @@ const options = {
             host:"127.0.0.1",
             user:"root",
             password:"",
-            database: MARIA_DB
+            database:"chatDatabase"
         }
     },
     sqliteDB:{

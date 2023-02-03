@@ -1,0 +1,6 @@
+[2023-02-02T17:23:51.137] [ERROR] errors - No se pudieron obtener los productos
+[2023-02-02T17:23:56.135] [ERROR] errors - No se pudieron obtener los productos
+[2023-02-02T17:24:03.429] [ERROR] errors - No se pudieron obtener los productos
+[2023-02-02T17:33:11.844] [ERROR] errors - No se pudieron obtener los productos
+[2023-02-02T17:33:30.941] [ERROR] errors - El producto no pudo ser guardado
+[2023-02-02T17:33:30.941] [ERROR] errors - No se pudieron obtener los productos

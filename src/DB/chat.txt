@@ -1,120 +1,29 @@
 [
   {
     "author": {
-      "email": "vspinaci@gmail.com",
+      "email": "valentino_spinaci@hotmail.com",
       "nombre": "Valentino",
       "apellido": "Spinaci",
       "edad": "22",
       "alias": "vspinaci",
-      "avatar": "jajaja"
+      "avatar": "aaa"
     },
-    "date": "27/12/2022, 10:45:16",
-    "text": "Bienvenidos!",
+    "date": "2/2/2023, 19:42:19",
+    "text": "Buen dia!",
     "id": 1
   },
   {
     "author": {
-      "email": "vspinaci@gmail.com",
-      "nombre": "Valentino",
+      "email": "hspinaci@hotmail.com",
+      "nombre": "Horacio",
       "apellido": "Spinaci",
-      "edad": "22",
-      "alias": "vspinaci",
-      "avatar": "jajaja"
+      "edad": "63",
+      "alias": "hspinaci",
+      "avatar": "aaaa"
     },
-    "date": "27/12/2022, 10:45:49",
-    "text": "Como andas?",
+    "date": "2/2/2023, 19:43:10",
+    "text": "Buenas! Como va?",
     "id": 2
-  },
-  {
-    "author": {
-      "email": "jgarcia@gmail.com",
-      "nombre": "Juan",
-      "apellido": "Garcia",
-      "edad": "32",
-      "alias": "jgarcia",
-      "avatar": "jajaja"
-    },
-    "date": "27/12/2022, 10:53:18",
-    "text": "Hola Valen",
-    "id": 3
-  },
-  {
-    "author": {
-      "email": "jgarcia@gmail.com",
-      "nombre": "Juan",
-      "apellido": "Garcia",
-      "edad": "32",
-      "alias": "jgarcia",
-      "avatar": "jajaja"
-    },
-    "date": "27/12/2022, 10:53:23",
-    "text": "Bien y vos?",
-    "id": 4
-  },
-  {
-    "author": {
-      "email": "jgarcia@gmail.com",
-      "nombre": "Juan",
-      "apellido": "Garcia",
-      "edad": "32",
-      "alias": "jgarcia",
-      "avatar": "jajaja"
-    },
-    "date": "27/12/2022, 10:53:33",
-    "text": "Que andas haciendo?",
-    "id": 5
-  },
-  {
-    "author": {
-      "email": "vborsani@gmail.com",
-      "nombre": "Vanina",
-      "apellido": "Borsani",
-      "edad": "19",
-      "alias": "vborsani",
-      "avatar": "jajaja"
-    },
-    "date": "27/12/2022, 12:20:45",
-    "text": "Hola chicos!",
-    "id": 6
-  },
-  {
-    "author": {
-      "email": "vborsani@gmail.com",
-      "nombre": "Vanina",
-      "apellido": "Borsani",
-      "edad": "19",
-      "alias": "vborsani",
-      "avatar": "jajaja"
-    },
-    "date": "27/12/2022, 12:21:28",
-    "text": "Yo estoy cocinando una torta",
-    "id": 7
-  },
-  {
-    "author": {
-      "email": "vborsani@gmail.com",
-      "nombre": "Vanina",
-      "apellido": "Borsani",
-      "edad": "19",
-      "alias": "vborsani",
-      "avatar": "jajaja"
-    },
-    "date": "27/12/2022, 12:21:40",
-    "text": "A la tarde voy a dormir la siesta",
-    "id": 8
-  },
-  {
-    "author": {
-      "email": "vspinaci@hotmail.com",
-      "nombre": "Valentino",
-      "apellido": "Spinaci",
-      "edad": "22",
-      "alias": "vspinaci",
-      "avatar": "2222"
-    },
-    "date": "12/1/2023, 11:35:22",
-    "text": "Holaa",
-    "id": 9
   },
   {
     "author": {
@@ -122,11 +31,37 @@
       "nombre": "Valentino",
       "apellido": "Spinaci",
       "edad": "22",
-      "alias": "22",
-      "avatar": "22"
+      "alias": "vspinaci",
+      "avatar": "aaaa"
     },
-    "date": "12/1/2023, 11:41:27",
-    "text": "Boca",
-    "id": 10
+    "date": "2/2/2023, 19:43:34",
+    "text": "Bien y vos?",
+    "id": 3
+  },
+  {
+    "author": {
+      "email": "valentino_spinaci@hotmail.com",
+      "nombre": "Valentino",
+      "apellido": "Spinaci",
+      "edad": "22",
+      "alias": "vspinaci",
+      "avatar": "aaaa"
+    },
+    "date": "2/2/2023, 19:43:40",
+    "text": "Tenes idea cuando juega boca?",
+    "id": 4
+  },
+  {
+    "author": {
+      "email": "valentino_spinaci@hotmail.com",
+      "nombre": "Valentino",
+      "apellido": "Spinaci",
+      "edad": "22",
+      "alias": "vspinaci",
+      "avatar": "aaa"
+    },
+    "date": "2/2/2023, 19:43:50",
+    "text": "El domingo 19:15hs",
+    "id": 5
   }
 ]

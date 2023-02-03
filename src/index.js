@@ -1,4 +1,19 @@
 import fs from "fs";
+import log4js from "log4js";
+
+//Configuracion log4js
+log4js.configure({
+    appenders:{
+        consola:{type:"console"},
+        fileWarn:{type:"file", filename:"./src/logs/fileWarn.txt"},
+        fileError:{type:"file", filename:"./src/logs/fileError.txt"}
+    },//Definir las salidas de datos --> Como mostrar y almacenar registros
+    categories:{
+        default:{appenders:["consola"], level:"trace"},
+        warns:{appenders:["consola", "fileWarn"], level:"warn"},
+        errors:{appenders:["consola", "fileError"], level:"error"}
+    }
+})
 
 class Contenedor {
     constructor(filename){
@@ -20,7 +35,8 @@ class Contenedor {
                 await fs.promises.writeFile(this.filename, JSON.stringify([product], null, 2));
             }
         } catch (error) {
-            return "El producto no pudo ser guardado"
+            logger = log4js.getLogger("errors")
+            logger.error("El producto no pudo ser guardado")
         }
     }
 
@@ -34,7 +50,8 @@ class Contenedor {
                 return [];
             }
         } catch (error) {
-            return "Hubo un error leyendo el archivo";
+            logger = log4js.getLogger("errors")
+            logger.error("Hubo un error leyendo el archivo")
         }
     }
 
@@ -44,7 +61,8 @@ class Contenedor {
             const productoEncontrado = productos.find(product => product.id == id);
             return productoEncontrado;
         } catch (error) {
-            console.log("El producto no se encuentra")
+            logger = log4js.getLogger("errors")
+            logger.error("El producto no se encuentra")
         }
     }
 
@@ -54,7 +72,8 @@ class Contenedor {
             const productosNuevos = productos.filter(product => product.id !== id);
             await fs.promises.writeFile(this.filename, JSON.stringify(productosNuevos, null, 2));
         } catch (error) {
-            console.log("El producto a eliminar no se pudo encontrar")
+            logger = log4js.getLogger("errors")
+            logger.error("El producto a eliminar no se pudo encontrar")
         }
     }
 
@@ -62,7 +81,8 @@ class Contenedor {
         try {
             const archivoVacio = await fs.promises.writeFile(this.filename, []);
         } catch (error) {
-            console.log("No se pudieron eliminar los objetos")
+            logger = log4js.getLogger("errors")
+            logger.error("No se pudieron eliminar los objetos")
         }
     }
 }

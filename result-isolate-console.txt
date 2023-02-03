@@ -1,0 +1,692 @@
+Statistical profiling result from isolate-console.log, (2234 ticks, 9 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     34    1.5%          /usr/lib/system/libsystem_pthread.dylib
+     31    1.4%          /usr/lib/system/libsystem_malloc.dylib
+     15    0.7%          /usr/lib/system/libsystem_c.dylib
+      9    0.4%          /usr/lib/system/libsystem_platform.dylib
+      6    0.3%          /usr/lib/libc++.1.dylib
+      1    0.0%          /usr/lib/system/libsystem_kernel.dylib
+      1    0.0%          /usr/lib/system/libdyld.dylib
+      1    0.0%          /usr/lib/libc++abi.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      3    0.1%    0.1%  LazyCompile: *resolve node:path:1091:10
+      2    0.1%    0.1%  RegExp: y{1,4}
+      2    0.1%    0.1%  RegExp: SSS
+      2    0.1%    0.1%  LazyCompile: *realpathSync node:fs:2460:22
+      2    0.1%    0.1%  Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      1    0.0%    0.0%  RegExp: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+\/[!#$%&'*+.^_`|~0-9A-Za-z-]+$
+      1    0.0%    0.0%  RegExp: ^((?:@[^/\\%]+\/)?[^./\\%][^/\\%]*)(\/.*)?$
+      1    0.0%    0.0%  RegExp: ;\s*charset\s*=
+      1    0.0%    0.0%  RegExp: (?:^|[\\/])\.\.(?:[\\/]|$)
+      1    0.0%    0.0%  LazyCompile: *readPackageScope node:internal/modules/cjs/loader:332:26
+      1    0.0%    0.0%  LazyCompile: *normalizeString node:path:66:25
+      1    0.0%    0.0%  LazyCompile: *nextTick node:internal/process/task_queues:104:18
+      1    0.0%    0.0%  LazyCompile: *next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:177:16
+      1    0.0%    0.0%  LazyCompile: *emit node:events:460:44
+      1    0.0%    0.0%  Function: ^write_ node:_http_outgoing:790:16
+      1    0.0%    0.0%  Function: ^update node:internal/crypto/hash:99:40
+      1    0.0%    0.0%  Function: ^throwExceptionIf /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/configuration.js:29:26
+      1    0.0%    0.0%  Function: ^subarray node:buffer:1123:46
+      1    0.0%    0.0%  Function: ^stat node:fs:1504:14
+      1    0.0%    0.0%  Function: ^set /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/application.js:359:23
+      1    0.0%    0.0%  Function: ^session /Users/valentino/Desktop/backend/chat-sql/node_modules/express-session/index.js:179:26
+      1    0.0%    0.0%  Function: ^serialize /Users/valentino/Desktop/backend/chat-sql/node_modules/bson/lib/bson.js:110:19
+      1    0.0%    0.0%  Function: ^send /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:111:25
+      1    0.0%    0.0%  Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    0.0%    0.0%  Function: ^processIncomingData /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:84:29
+      1    0.0%    0.0%  Function: ^parserOnIncoming node:_http_server:880:26
+      1    0.0%    0.0%  Function: ^padWithZeros /Users/valentino/Desktop/backend/chat-sql/node_modules/date-format/lib/index.js:3:22
+      1    0.0%    0.0%  Function: ^listenerCount node:events:840:23
+      1    0.0%    0.0%  Function: ^isUint32 node:internal/validators:41:18
+      1    0.0%    0.0%  Function: ^isMaster /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/clustering.js:21:18
+      1    0.0%    0.0%  Function: ^isBuffer node:buffer:515:36
+      1    0.0%    0.0%  Function: ^initHooksExist node:internal/async_hooks:478:24
+      1    0.0%    0.0%  Function: ^getHeader node:_http_outgoing:647:57
+      1    0.0%    0.0%  Function: ^end /Users/valentino/Desktop/backend/chat-sql/node_modules/compression/index.js:92:28
+      1    0.0%    0.0%  Function: ^emit node:events:460:44
+      1    0.0%    0.0%  Function: ^compileFunction node:vm:316:25
+      1    0.0%    0.0%  Function: ^_write node:internal/streams/writable:285:16
+      1    0.0%    0.0%  Function: ^_flushOutput node:_http_outgoing:1030:63
+      1    0.0%    0.0%  Function: ^Timeout.refresh node:internal/timers:210:37
+      1    0.0%    0.0%  Function: ^Socket._write node:net:885:35
+      1    0.0%    0.0%  Function: ^Readable.read node:internal/streams/readable:394:35
+      1    0.0%    0.0%  Function: ^Module._resolveFilename node:internal/modules/cjs/loader:865:35
+      1    0.0%    0.0%  Function: ^<anonymous> node:buffer:354:36
+      1    0.0%    0.0%  Function: *wasm-function[15]
+
+ [C++]:
+   ticks  total  nonlib   name
+    705   31.6%   33.0%  t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+    662   29.6%   31.0%  T _posix_spawn_file_actions_adddup2
+    330   14.8%   15.4%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    172    7.7%    8.1%  T node::loader::ModuleWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+     47    2.1%    2.2%  T node::native_module::NativeModuleEnv::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     30    1.3%    1.4%  T __kernelrpc_mach_port_get_refs
+     19    0.9%    0.9%  t node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+     16    0.7%    0.7%  T _task_restartable_ranges_register
+     15    0.7%    0.7%  t node::fs::InternalModuleStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      8    0.4%    0.4%  T _mach_msg_destroy
+      7    0.3%    0.3%  T _task_restartable_ranges_synchronize
+      5    0.2%    0.2%  T node::InternalCallbackScope::InternalCallbackScope(node::AsyncWrap*, int)
+      5    0.2%    0.2%  T _os_packet_get_expire_time
+      4    0.2%    0.2%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.2%    0.2%  t node::EnvGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      4    0.2%    0.2%  T _vm_region_64
+      3    0.1%    0.1%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      3    0.1%    0.1%  t node::fs::Stat(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.1%    0.1%  T _mach_port_allocate
+      2    0.1%    0.1%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  t node::fs::FStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  T node::loader::ModuleWrap::Evaluate(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  T node::i18n::ConverterObject::Decode(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  T ___rename
+      1    0.0%    0.0%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)3>(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t std::__1::vector<unsigned long, std::__1::allocator<unsigned long> >::__append(unsigned long)
+      1    0.0%    0.0%  t std::__1::__shared_ptr_pointer<char*, std::__1::default_delete<char []>, std::__1::allocator<char> >::__on_zero_shared_weak()
+      1    0.0%    0.0%  t std::__1::__hash_table<unsigned int, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<unsigned int> >::__rehash(unsigned long)
+      1    0.0%    0.0%  t node::fs::Read(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::fs::LStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::fs::FillGlobalStatsArray(node::fs::BindingData*, bool, uv_stat_t const*, bool)
+      1    0.0%    0.0%  t node::Buffer::(anonymous namespace)::ByteLengthUtf8(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::(anonymous namespace)::Parser::OnStreamRead(long, uv_buf_t const&)
+      1    0.0%    0.0%  t node::(anonymous namespace)::Parser::OnStreamAlloc(unsigned long)
+      1    0.0%    0.0%  t __pthread_mutex_check_init_slow
+      1    0.0%    0.0%  T node::fs::NewFSReqCallback(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::MakeLibuvRequestCallback<uv_fs_s, void (*)(uv_fs_s*)>::Wrapper(uv_fs_s*)
+      1    0.0%    0.0%  T node::Environment::RunAndClearNativeImmediates(bool)
+      1    0.0%    0.0%  T node::AsyncHooks::push_async_context(double, double, v8::Local<v8::Object>)
+      1    0.0%    0.0%  T node::AsyncHooks::pop_async_context(double)
+      1    0.0%    0.0%  T _socket
+      1    0.0%    0.0%  T _proc_set_dirty
+      1    0.0%    0.0%  T _os_packet_set_expire_time
+      1    0.0%    0.0%  T _mig_get_reply_port
+      1    0.0%    0.0%  T _mach_port_deallocate
+      1    0.0%    0.0%  T _getxattr
+      1    0.0%    0.0%  T _geteuid
+
+ [Summary]:
+   ticks  total  nonlib   name
+     50    2.2%    2.3%  JavaScript
+   2077   93.0%   97.2%  C++
+     79    3.5%    3.7%  GC
+     98    4.4%          Shared libraries
+      9    0.4%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+   1315   99.0%   58.9%  t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      8    0.6%    0.4%  T _mach_msg_destroy
+      4    0.3%    0.2%  T _vm_region_64
+      1    0.1%    0.0%  t node::fs::FillGlobalStatsArray(node::fs::BindingData*, bool, uv_stat_t const*, bool)
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    705   31.6%  t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+    329   46.7%    t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+     21    6.4%      t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      2    9.5%        Function: ^header /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:777:29
+      1   50.0%          Function: ^send /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^json /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:250:25
+      1   50.0%          Function: ^json /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:250:25
+      1  100.0%            Function: ^<anonymous> file:///Users/valentino/Desktop/backend/chat-sql/src/server.js:316:18
+      2    9.5%        Function: ^checkInvalidHeaderChar node:_http_common:231:32
+      2  100.0%          Function: ^<anonymous> node:_http_outgoing:577:45
+      2  100.0%            Function: ^setHeader node:_http_outgoing:601:57
+      2    9.5%        Function: ^Module._findPath node:internal/modules/cjs/loader:505:28
+      2  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:865:35
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      1    4.8%        LazyCompile: ~toString /Users/valentino/Desktop/backend/chat-sql/node_modules/uid-safe/index.js:102:19
+      1  100.0%          LazyCompile: ~uidSync /Users/valentino/Desktop/backend/chat-sql/node_modules/uid-safe/index.js:75:18
+      1  100.0%            LazyCompile: ~generateSessionId /Users/valentino/Desktop/backend/chat-sql/node_modules/express-session/index.js:518:27
+      1    4.8%        LazyCompile: ~populateMaps /Users/valentino/Desktop/backend/chat-sql/node_modules/mime-types/index.js:154:23
+      1  100.0%          Function: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mime-types/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1    4.8%        LazyCompile: ~match /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:110:39
+      1  100.0%          LazyCompile: ~matchLayer /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:583:20
+      1  100.0%            LazyCompile: ~next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:177:16
+      1    4.8%        LazyCompile: ~command /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/connection.js:261:12
+      1  100.0%          LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1  100.0%            LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/auth/scram.js:25:32
+      1    4.8%        LazyCompile: ~MongoStore /Users/valentino/Desktop/backend/chat-sql/node_modules/connect-mongo/build/main/lib/MongoStore.js:75:16
+      1  100.0%          LazyCompile: ~create /Users/valentino/Desktop/backend/chat-sql/node_modules/connect-mongo/build/main/lib/MongoStore.js:135:18
+      1  100.0%            Script: ~<anonymous> file:///Users/valentino/Desktop/backend/chat-sql/src/server.js:1:1
+      1    4.8%        Function: ~<anonymous> node:internal/modules/cjs/loader:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1    4.8%        Function: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/socket.io-parser/node_modules/debug/src/node.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1    4.8%        Function: ^set /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/application.js:359:23
+      1  100.0%          Function: ^app.<computed> /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/application.js:490:25
+      1  100.0%            LazyCompile: ~json /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:250:25
+      1    4.8%        Function: ^realpathSync node:fs:2460:22
+      1  100.0%          Function: ^toRealPath node:internal/modules/cjs/loader:404:20
+      1  100.0%            Function: ^tryFile node:internal/modules/cjs/loader:395:17
+      1    4.8%        Function: ^readPackage node:internal/modules/cjs/loader:301:21
+      1  100.0%          LazyCompile: ~tryPackage node:internal/modules/cjs/loader:349:20
+      1  100.0%            LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:505:28
+      1    4.8%        Function: ^pipe /Users/valentino/Desktop/backend/chat-sql/node_modules/send/index.js:506:43
+      1  100.0%          Function: ^serveStatic /Users/valentino/Desktop/backend/chat-sql/node_modules/serve-static/index.js:72:31
+      1  100.0%            LazyCompile: *trim_prefix /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:293:23
+      1    4.8%        Function: ^getOwn node:internal/bootstrap/loaders:187:16
+      1  100.0%          Function: ^syncExports node:internal/bootstrap/loaders:304:14
+      1  100.0%            Function: ^<anonymous> node:internal/bootstrap/loaders:290:15
+      1    4.8%        Function: ^format /Users/valentino/Desktop/backend/chat-sql/node_modules/content-type/index.js:65:17
+      1  100.0%          Function: ^setCharset /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/utils.js:248:41
+      1  100.0%            Function: ^send /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:111:25
+      1    4.8%        Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:1020:36
+      1    4.8%        Function: ^<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/lib/helpers/pluralize.js:86:34
+      1  100.0%          t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1  100.0%            LazyCompile: ~pluralize /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/lib/helpers/pluralize.js:82:19
+     19    5.8%      Function: ^writevGeneric node:internal/stream_base_commons:122:23
+     19  100.0%        Function: ^Socket._writeGeneric node:net:848:42
+     19  100.0%          Function: ^Socket._writev node:net:880:36
+     19  100.0%            Function: ^doWrite node:internal/streams/writable:400:17
+     17    5.2%      Function: ^memoryUsage node:internal/process/per_thread:169:23
+     17  100.0%        Function: ^<anonymous> file:///Users/valentino/Desktop/backend/chat-sql/src/server.js:316:18
+     12   70.6%          Function: ^handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+     12  100.0%            Function: ^next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/route.js:116:16
+      5   29.4%          LazyCompile: *handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      5  100.0%            Function: ^next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/route.js:116:16
+      9    2.7%      Function: ^initialize /Users/valentino/Desktop/backend/chat-sql/node_modules/passport/lib/middleware/initialize.js:51:29
+      7   77.8%        Function: ^handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      7  100.0%          Function: ^trim_prefix /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:293:23
+      5   71.4%            LazyCompile: *next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:177:16
+      2   28.6%            Function: ^<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:280:64
+      2   22.2%        LazyCompile: *trim_prefix /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:293:23
+      2  100.0%          LazyCompile: *next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:177:16
+      2  100.0%            Function: ^session /Users/valentino/Desktop/backend/chat-sql/node_modules/express-session/index.js:179:26
+      9    2.7%      Function: ^handleWriteReq node:internal/stream_base_commons:45:24
+      9  100.0%        Function: ^writeGeneric node:internal/stream_base_commons:147:22
+      9  100.0%          Function: ^Socket._writeGeneric node:net:848:42
+      9  100.0%            Function: ^Socket._write node:net:885:35
+      7    2.1%      Function: ^randomFillSync node:internal/crypto/random:113:24
+      7  100.0%        Function: ^randomBytes node:internal/crypto/random:93:21
+      6   85.7%          Function: ^randomBytesSync /Users/valentino/Desktop/backend/chat-sql/node_modules/random-bytes/index.js:72:25
+      6  100.0%            Function: ^uidSync /Users/valentino/Desktop/backend/chat-sql/node_modules/uid-safe/index.js:75:18
+      1   14.3%          LazyCompile: ~randomBytesSync /Users/valentino/Desktop/backend/chat-sql/node_modules/random-bytes/index.js:72:25
+      1  100.0%            Function: ^uidSync /Users/valentino/Desktop/backend/chat-sql/node_modules/uid-safe/index.js:75:18
+      7    2.1%      Function: ^cookieParser /Users/valentino/Desktop/backend/chat-sql/node_modules/cookie-parser/index.js:44:32
+      4   57.1%        Function: ^handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      4  100.0%          Function: ^trim_prefix /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:293:23
+      3   75.0%            LazyCompile: *next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:177:16
+      1   25.0%            Function: ^<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:280:64
+      3   42.9%        LazyCompile: *trim_prefix /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:293:23
+      3  100.0%          LazyCompile: *next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:177:16
+      3  100.0%            Function: ^compression /Users/valentino/Desktop/backend/chat-sql/node_modules/compression/index.js:59:31
+      7    2.1%      Function: ^compression /Users/valentino/Desktop/backend/chat-sql/node_modules/compression/index.js:59:31
+      4   57.1%        Function: ^handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      4  100.0%          Function: ^trim_prefix /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:293:23
+      3   75.0%            Function: ^<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:280:64
+      1   25.0%            LazyCompile: *next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:177:16
+      3   42.9%        LazyCompile: *trim_prefix /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:293:23
+      3  100.0%          LazyCompile: *next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:177:16
+      3  100.0%            Function: ^error /Users/valentino/Desktop/backend/chat-sql/node_modules/serve-static/index.js:115:39
+      6    1.8%      Function: ^setWriteHeadHeaders /Users/valentino/Desktop/backend/chat-sql/node_modules/on-headers/index.js:105:30
+      6  100.0%        Function: ^writeHead /Users/valentino/Desktop/backend/chat-sql/node_modules/on-headers/index.js:28:29
+      6  100.0%          Function: ^_implicitHeader node:_http_server:287:68
+      6  100.0%            Function: ^end /Users/valentino/Desktop/backend/chat-sql/node_modules/compression/index.js:92:28
+      6    1.8%      Function: ^Hash node:internal/crypto/hash:62:14
+      6  100.0%        Function: ^createHash node:crypto:129:20
+      4   66.7%          Function: ^hash /Users/valentino/Desktop/backend/chat-sql/node_modules/express-session/index.js:596:14
+      3   75.0%            Function: ^isModified /Users/valentino/Desktop/backend/chat-sql/node_modules/express-session/index.js:425:24
+      1   25.0%            Function: ^generate /Users/valentino/Desktop/backend/chat-sql/node_modules/express-session/index.js:363:22
+      2   33.3%          Function: ^entitytag /Users/valentino/Desktop/backend/chat-sql/node_modules/etag/index.js:39:20
+      2  100.0%            Function: ^etag /Users/valentino/Desktop/backend/chat-sql/node_modules/etag/index.js:70:15
+      4    1.2%      LazyCompile: *next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:177:16
+      2   50.0%        Function: ^jsonParser /Users/valentino/Desktop/backend/chat-sql/node_modules/body-parser/lib/types/json.js:98:30
+      2  100.0%          Function: ^handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%            Function: ^trim_prefix /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:293:23
+      1   25.0%        Function: ^strategy.pass /Users/valentino/Desktop/backend/chat-sql/node_modules/passport/lib/middleware/authenticate.js:345:31
+      1  100.0%          Function: ^SessionStrategy.authenticate /Users/valentino/Desktop/backend/chat-sql/node_modules/passport/lib/strategies/session.js:45:50
+      1  100.0%            Function: ^attempt /Users/valentino/Desktop/backend/chat-sql/node_modules/passport/lib/middleware/authenticate.js:180:22
+      1   25.0%        Function: ^error /Users/valentino/Desktop/backend/chat-sql/node_modules/serve-static/index.js:115:39
+      1  100.0%          LazyCompile: *emit node:events:460:44
+      1  100.0%            Function: ^error /Users/valentino/Desktop/backend/chat-sql/node_modules/send/index.js:267:45
+      4    1.2%      Function: ^writeHead node:_http_server:292:19
+      4  100.0%        Function: ^writeHead /Users/valentino/Desktop/backend/chat-sql/node_modules/on-headers/index.js:28:29
+      4  100.0%          Function: ^writeHead /Users/valentino/Desktop/backend/chat-sql/node_modules/on-headers/index.js:28:29
+      4  100.0%            Function: ^_implicitHeader node:_http_server:287:68
+      4    1.2%      Function: ^parse /Users/valentino/Desktop/backend/chat-sql/node_modules/content-type/index.js:106:16
+      4  100.0%        Function: ^setCharset /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/utils.js:248:41
+      4  100.0%          Function: ^send /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:111:25
+      4  100.0%            Function: ^json /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:250:25
+      4    1.2%      Function: ^nextTick node:internal/process/task_queues:104:18
+      1   25.0%        Function: ^resume node:internal/streams/readable:977:16
+      1  100.0%          Function: ^Readable.resume node:internal/streams/readable:963:37
+      1  100.0%            Function: ^_dump node:_http_incoming:419:49
+      1   25.0%        Function: ^onwrite node:internal/streams/writable:427:17
+      1  100.0%          Function: ^afterWriteDispatched node:internal/stream_base_commons:155:30
+      1  100.0%            Function: ^writevGeneric node:internal/stream_base_commons:122:23
+      1   25.0%        Function: ^maybeReadMore node:internal/streams/readable:602:23
+      1  100.0%          Function: ^addChunk node:internal/streams/readable:304:18
+      1  100.0%            Function: ^readableAddChunk node:internal/streams/readable:236:26
+      1   25.0%        Function: ^endReadable node:internal/streams/readable:1341:21
+      1  100.0%          Function: ^Readable.read node:internal/streams/readable:394:35
+      1  100.0%            Function: ^resume_ node:internal/streams/readable:984:17
+      4    1.2%      Function: ^emit node:events:460:44
+      1   25.0%        LazyCompile: ~connect /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:154:12
+      1  100.0%          LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js:136:49
+      1  100.0%            LazyCompile: ~<anonymous> node:internal/util:347:24
+      1   25.0%        LazyCompile: ~TLSSocket._finishInit node:_tls_wrap:923:43
+      1  100.0%          LazyCompile: ~ssl.onhandshakedone node:_tls_wrap:728:27
+      1   25.0%        Function: ^parserOnIncoming node:_http_server:880:26
+      1  100.0%          Function: ^parserOnHeadersComplete node:_http_common:77:33
+      1   25.0%        Function: ^emitReadable_ node:internal/streams/readable:574:23
+      1  100.0%          LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      4    1.2%      Function: ^digest node:internal/crypto/hash:119:40
+      3   75.0%        Function: ^entitytag /Users/valentino/Desktop/backend/chat-sql/node_modules/etag/index.js:39:20
+      3  100.0%          Function: ^etag /Users/valentino/Desktop/backend/chat-sql/node_modules/etag/index.js:70:15
+      3  100.0%            Function: ^generateETag /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/utils.js:273:32
+      1   25.0%        Function: ^hash /Users/valentino/Desktop/backend/chat-sql/node_modules/express-session/index.js:596:14
+      1  100.0%          Function: ^isModified /Users/valentino/Desktop/backend/chat-sql/node_modules/express-session/index.js:425:24
+      1  100.0%            Function: ^shouldSave /Users/valentino/Desktop/backend/chat-sql/node_modules/express-session/index.js:440:24
+      4    1.2%      Function: ^deserializeObject /Users/valentino/Desktop/backend/chat-sql/node_modules/bson/lib/parser/deserializer.js:65:27
+      4  100.0%        Function: ^deserialize /Users/valentino/Desktop/backend/chat-sql/node_modules/bson/lib/parser/deserializer.js:36:21
+      4  100.0%          Function: ^deserialize /Users/valentino/Desktop/backend/chat-sql/node_modules/bson/lib/bson.js:161:21
+      2   50.0%            Function: ^parse /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/commands.js:426:10
+      2   50.0%            Function: ^parse /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/commands.js:426:10
+      4    1.2%      Function: ^URL node:internal/url:632:14
+      1   25.0%        LazyCompile: ~validateArgs node:internal/modules/esm/loader:570:26
+      1  100.0%          Function: ^ObjectDefineProperty.__proto__ node:internal/modules/esm/loader:150:5
+      1  100.0%            LazyCompile: ~load node:internal/modules/esm/loader:559:13
+      1   25.0%        Function: ^validateArgs node:internal/modules/esm/loader:570:26
+      1  100.0%          Function: ^ObjectDefineProperty.__proto__ node:internal/modules/esm/loader:150:5
+      1  100.0%            Function: ^load node:internal/modules/esm/loader:559:13
+      1   25.0%        Function: ^URL node:internal/url:632:14
+      1  100.0%          Function: ^getPackageScopeConfig node:internal/modules/esm/resolve:253:31
+      1  100.0%            LazyCompile: ~packageResolve node:internal/modules/esm/resolve:892:24
+      1   25.0%        Function: ^HostAddress /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/utils.js:871:16
+      1  100.0%          Function: ^fromString /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/utils.js:929:22
+      1  100.0%            Function: ^get hostAddress /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/server_description.js:65:20
+      4    1.2%      Function: ^LoggingEvent /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/LoggingEvent.js:58:14
+      4  100.0%        Function: ^_log /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/logger.js:163:7
+      4  100.0%          Function: ^log /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/logger.js:139:6
+      4  100.0%            Function: ^Logger.<computed> /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/logger.js:234:44
+      9    1.3%    Function: ^_log /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/logger.js:163:7
+      9  100.0%      Function: ^log /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/logger.js:139:6
+      9  100.0%        Function: ^Logger.<computed> /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/logger.js:234:44
+      9  100.0%          Function: ^<anonymous> file:///Users/valentino/Desktop/backend/chat-sql/src/server.js:316:18
+      5   55.6%            LazyCompile: *handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      4   44.4%            Function: ^handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+
+    662   29.6%  T _posix_spawn_file_actions_adddup2
+
+    330   14.8%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    330  100.0%    t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+    326   98.8%      Function: ^compileFunction node:vm:316:25
+    323   99.1%        Function: ^wrapSafe node:internal/modules/cjs/loader:1040:18
+    323  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+    318   98.5%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      5    1.5%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      4    1.2%      LazyCompile: ~compileFunction node:vm:316:25
+      4  100.0%        LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1040:18
+      4  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1080:37
+      4  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1135:37
+
+    172    7.7%  T node::loader::ModuleWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+    172  100.0%    t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+    170   98.8%      Function: ^moduleStrategy node:internal/modules/esm/translators:114:56
+    170  100.0%        Function: ^moduleProvider node:internal/modules/esm/loader:459:28
+    170  100.0%          t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      2    1.2%      LazyCompile: ~moduleStrategy node:internal/modules/esm/translators:114:56
+      1   50.0%        LazyCompile: ~moduleProvider node:internal/modules/esm/loader:459:28
+      1  100.0%          t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1   50.0%        Function: ^moduleProvider node:internal/modules/esm/loader:459:28
+      1  100.0%          t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+
+     47    2.1%  T node::native_module::NativeModuleEnv::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     47  100.0%    t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+     36   76.6%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+     29   80.6%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      5   17.2%          Function: ~<anonymous> node:crypto:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3   10.3%          Function: ~<anonymous> node:tls:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3   10.3%          Function: ~<anonymous> node:http:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2    6.9%          Function: ~<anonymous> node:internal/child_process:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2    6.9%          Function: ~<anonymous> node:_http_client:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      1  100.0%            LazyCompile: ~get node:crypto:294:8
+      1    3.4%          LazyCompile: ~lazyLoadStreams node:fs:2893:25
+      1  100.0%            LazyCompile: ~get ReadStream node:fs:3036:17
+      1    3.4%          LazyCompile: ~initCJSParse node:internal/modules/esm/translators:58:28
+      1  100.0%            LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      1    3.4%          Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          Function: ~<anonymous> node:internal/modules/esm/load:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          Function: ~<anonymous> node:internal/blocklist:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          Function: ~<anonymous> node:https:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          Function: ~<anonymous> node:cluster:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          Function: ~<anonymous> node:child_process:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          Function: ~<anonymous> node:assert:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          Function: ~<anonymous> node:_tls_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    3.4%          Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      4   11.1%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      4  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      4  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      3    8.3%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      2   66.7%          LazyCompile: ~loadNativeModule node:internal/modules/cjs/helpers:44:26
+      2  100.0%            LazyCompile: ~builtinStrategy node:internal/modules/esm/translators:254:58
+      1   33.3%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+     11   23.4%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+     11  100.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      2   18.2%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:521:29
+      2  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      2   18.2%          Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    9.1%          LazyCompile: ~initializeSourceMapsHandlers node:internal/bootstrap/pre_execution:560:38
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1    9.1%          Function: ~<anonymous> node:net:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    9.1%          Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    9.1%          Function: ~<anonymous> node:internal/modules/esm/resolve:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    9.1%          Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    9.1%          Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    9.1%          Function: ~<anonymous> node:internal/modules/cjs/loader:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:316:27
+
+     34    1.5%  /usr/lib/system/libsystem_pthread.dylib
+     26   76.5%    t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      2    7.7%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:404:20
+      2  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:505:28
+      2  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      2  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      2    7.7%      LazyCompile: ~onParseError node:internal/url:563:22
+      2  100.0%        t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      2  100.0%          Function: ^URL node:internal/url:632:14
+      2  100.0%            LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:1124:30
+      2    7.7%      LazyCompile: ~createAppender /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/appenders/index.js:74:24
+      2  100.0%        LazyCompile: ~getAppender /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/appenders/index.js:59:21
+      2  100.0%          LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/appenders/index.js:139:41
+      2  100.0%            t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1    3.8%      LazyCompile: ~writeHead /Users/valentino/Desktop/backend/chat-sql/node_modules/on-headers/index.js:28:29
+      1  100.0%        LazyCompile: ~writeHead /Users/valentino/Desktop/backend/chat-sql/node_modules/on-headers/index.js:28:29
+      1  100.0%          LazyCompile: ~_implicitHeader node:_http_server:287:68
+      1  100.0%            LazyCompile: ~end /Users/valentino/Desktop/backend/chat-sql/node_modules/compression/index.js:92:28
+      1    3.8%      LazyCompile: ~value node:internal/console/constructor:230:20
+      1  100.0%        LazyCompile: ~initializeGlobalConsole node:internal/console/constructor:687:33
+      1  100.0%          LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:103:28
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1    3.8%      LazyCompile: ~updateServers /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:488:23
+      1  100.0%        LazyCompile: ~serverUpdateHandler /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:320:24
+      1  100.0%          LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:480:53
+      1  100.0%            Function: ^emit node:events:460:44
+      1    3.8%      LazyCompile: ~tryReadSync node:fs:438:21
+      1  100.0%        LazyCompile: ~readFileSync node:fs:459:22
+      1  100.0%          LazyCompile: ~cjsPreparseModuleExports node:internal/modules/esm/translators:194:34
+      1  100.0%            LazyCompile: ~<anonymous> node:internal/modules/esm/translators:233:36
+      1    3.8%      LazyCompile: ~stringify node:internal/modules/esm/translators:94:19
+      1  100.0%        LazyCompile: ~moduleStrategy node:internal/modules/esm/translators:114:56
+      1  100.0%          LazyCompile: ~moduleProvider node:internal/modules/esm/loader:459:28
+      1  100.0%            t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1    3.8%      LazyCompile: ~setup /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/node_modules/debug/src/common.js:7:15
+      1  100.0%        Function: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/node_modules/debug/src/node.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1    3.8%      LazyCompile: ~realpathSync node:fs:2460:22
+      1  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:404:20
+      1  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:505:28
+      1  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1    3.8%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    3.8%      LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:103:28
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    3.8%      LazyCompile: ~parserOnIncoming node:_http_server:880:26
+      1  100.0%        Function: ^parserOnHeadersComplete node:_http_common:77:33
+      1    3.8%      LazyCompile: ~json /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:250:25
+      1  100.0%        LazyCompile: ~<anonymous> file:///Users/valentino/Desktop/backend/chat-sql/src/server.js:316:18
+      1  100.0%          LazyCompile: ~handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            LazyCompile: ~next /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/route.js:116:16
+      1    3.8%      LazyCompile: ~WriteStream /Users/valentino/Desktop/backend/chat-sql/node_modules/graceful-fs/graceful-fs.js:320:24
+      1  100.0%        LazyCompile: ~createWriteStream /Users/valentino/Desktop/backend/chat-sql/node_modules/graceful-fs/graceful-fs.js:344:30
+      1  100.0%          LazyCompile: ~_renewWriteStream /Users/valentino/Desktop/backend/chat-sql/node_modules/streamroller/lib/RollingFileWriteStream.js:261:20
+      1  100.0%            LazyCompile: ~RollingFileWriteStream /Users/valentino/Desktop/backend/chat-sql/node_modules/streamroller/lib/RollingFileWriteStream.js:40:14
+      1    3.8%      LazyCompile: ~Writable.destroy node:internal/streams/writable:880:38
+      1  100.0%        LazyCompile: ~finish node:internal/streams/writable:747:16
+      1  100.0%          LazyCompile: ~finishMaybe node:internal/streams/writable:733:21
+      1  100.0%            LazyCompile: ~afterWrite node:internal/streams/writable:489:20
+      1    3.8%      LazyCompile: ~RollingFileWriteStream /Users/valentino/Desktop/backend/chat-sql/node_modules/streamroller/lib/RollingFileWriteStream.js:40:14
+      1  100.0%        LazyCompile: ~RollingFileStream /Users/valentino/Desktop/backend/chat-sql/node_modules/streamroller/lib/RollingFileStream.js:5:14
+      1  100.0%          LazyCompile: ~openTheStream /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/appenders/file.js:63:25
+      1  100.0%            LazyCompile: ~fileAppender /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/appenders/file.js:29:22
+      1    3.8%      LazyCompile: ~NativeConnection /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:19:26
+      1  100.0%        LazyCompile: ~Mongoose.createConnection /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/lib/index.js:338:47
+      1  100.0%          LazyCompile: ~Mongoose /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/lib/index.js:62:18
+      1  100.0%            Function: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/lib/index.js:1:1
+      1    3.8%      LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/sessions.js:134:43
+      1  100.0%        LazyCompile: ~maybeCallback /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/utils.js:336:23
+      1  100.0%          LazyCompile: ~endSession /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/sessions.js:130:15
+      1  100.0%            LazyCompile: ~executeOperationAsync /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:15:37
+      1    3.8%      LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/monitor.js:241:30
+      1  100.0%        LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/monitor.js:208:52
+      1  100.0%          LazyCompile: ~callback /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/connect.js:63:31
+      1  100.0%            LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/connect.js:88:85
+      1    3.8%      Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    3.8%      Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%        Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/load:1:1
+      1    3.8%      Function: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/lodash/assignInWith.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+
+     31    1.4%  /usr/lib/system/libsystem_malloc.dylib
+     25   80.6%    t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      3   12.0%      LazyCompile: *realpathSync node:fs:2460:22
+      2   66.7%        Function: ^toRealPath node:internal/modules/cjs/loader:404:20
+      2  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:395:17
+      2  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:411:23
+      1   33.3%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:505:28
+      1  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:865:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      3   12.0%      Function: ^stringify /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:1145:20
+      3  100.0%        Function: ^json /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:250:25
+      3  100.0%          Function: ^<anonymous> file:///Users/valentino/Desktop/backend/chat-sql/src/server.js:316:18
+      3  100.0%            Function: ^handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      2    8.0%      Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      2  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:1020:36
+      2  100.0%          Function: ^require node:internal/modules/cjs/helpers:101:31
+      1   50.0%            Function: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/knex/lib/execution/runner.js:1:1
+      1   50.0%            Function: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/utils.js:1:1
+      1    4.0%      t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1  100.0%        Function: ^FastBuffer node:internal/buffer:958:14
+      1  100.0%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1  100.0%            Function: ^allocate node:buffer:403:18
+      1    4.0%      LazyCompile: ~setStreamTimeout node:internal/stream_base_commons:237:26
+      1  100.0%        LazyCompile: ~connectHandler /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/connect.js:313:28
+      1  100.0%          LazyCompile: ~onceWrapper node:events:622:21
+      1  100.0%            Function: ^emit node:events:460:44
+      1    4.0%      LazyCompile: ~selectColor /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/node_modules/debug/src/common.js:41:22
+      1  100.0%        LazyCompile: ~createDebug /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/node_modules/debug/src/common.js:60:22
+      1  100.0%          Function: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/configuration.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1    4.0%      LazyCompile: ~legacyMainResolve node:internal/modules/esm/resolve:304:27
+      1  100.0%        LazyCompile: ~packageResolve node:internal/modules/esm/resolve:892:24
+      1  100.0%          LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:985:23
+      1  100.0%            LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:1124:30
+      1    4.0%      LazyCompile: ~isUserinfoPercentEncode /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb-connection-string-url/node_modules/whatwg-url/lib/percent-encoding.js:76:33
+      1  100.0%        LazyCompile: ~utf8PercentEncodeCodePointInternal /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb-connection-string-url/node_modules/whatwg-url/lib/percent-encoding.js:97:44
+      1  100.0%          LazyCompile: ~utf8PercentEncodeCodePoint /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb-connection-string-url/node_modules/whatwg-url/lib/percent-encoding.js:112:36
+      1  100.0%            LazyCompile: ~parseAuthority /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb-connection-string-url/node_modules/whatwg-url/lib/url-state-machine.js:731:71
+      1    4.0%      LazyCompile: ~instantiate node:internal/modules/esm/module_job:98:14
+      1  100.0%        LazyCompile: ~run node:internal/modules/esm/module_job:188:12
+      1  100.0%          LazyCompile: ~<anonymous> node:internal/modules/esm/loader:529:15
+      1    4.0%      LazyCompile: ~de file:///Users/valentino/Desktop/backend/chat-sql/node_modules/@faker-js/faker/dist/esm/chunk-G6GIS7LZ.mjs:12:15055
+      1  100.0%        Script: ~<anonymous> file:///Users/valentino/Desktop/backend/chat-sql/node_modules/@faker-js/faker/dist/esm/index.mjs:1:1
+      1  100.0%          t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1  100.0%            T node::loader::ModuleWrap::Evaluate(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    4.0%      LazyCompile: ~Socket._destroy node:net:728:37
+      1  100.0%        Function: ^_destroy node:internal/streams/destroy:70:18
+      1  100.0%          Function: ^destroy node:internal/streams/destroy:32:17
+      1  100.0%            LazyCompile: ~finish node:internal/streams/writable:747:16
+      1    4.0%      LazyCompile: ~<anonymous> node:internal/per_context/primordials:427:15
+      1  100.0%        t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1  100.0%          LazyCompile: ~primordials.SafePromisePrototypeFinally node:internal/per_context/primordials:424:43
+      1  100.0%            LazyCompile: ~readFile node:internal/fs/promises:811:24
+      1    4.0%      LazyCompile: ~<anonymous> node:internal/modules/run_main:55:29
+      1  100.0%        LazyCompile: ~loadESM node:internal/process/esm_loader:88:41
+      1  100.0%          t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1    4.0%      LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection_pool.js:360:48
+      1  100.0%        LazyCompile: ~callback /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:63:31
+      1  100.0%          LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:128:44
+      1  100.0%            LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/auth/scram.js:152:83
+      1    4.0%      LazyCompile: *readPackageScope node:internal/modules/cjs/loader:332:26
+      1  100.0%        Function: ^trySelf node:internal/modules/cjs/loader:452:17
+      1  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:865:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:771:24
+      1    4.0%      Function: ^send /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:111:25
+      1  100.0%        Function: ^json /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:250:25
+      1  100.0%          Function: ^<anonymous> file:///Users/valentino/Desktop/backend/chat-sql/src/server.js:316:18
+      1  100.0%            Function: ^handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      1    4.0%      Function: ^parse /Users/valentino/Desktop/backend/chat-sql/node_modules/content-type/index.js:106:16
+      1  100.0%        Function: ^setCharset /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/utils.js:248:41
+      1  100.0%          Function: ^send /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^json /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:250:25
+      1    4.0%      Function: ^onHeaders /Users/valentino/Desktop/backend/chat-sql/node_modules/on-headers/index.js:56:20
+      1  100.0%        Function: ^session /Users/valentino/Desktop/backend/chat-sql/node_modules/express-session/index.js:179:26
+      1  100.0%          Function: ^handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            Function: ^trim_prefix /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:293:23
+      1    4.0%      Function: ^decode /Users/valentino/Desktop/backend/chat-sql/node_modules/send/index.js:997:17
+      1  100.0%        Function: ^pipe /Users/valentino/Desktop/backend/chat-sql/node_modules/send/index.js:506:43
+      1  100.0%          Function: ^serveStatic /Users/valentino/Desktop/backend/chat-sql/node_modules/serve-static/index.js:72:31
+      1  100.0%            Function: ^handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      1    4.0%      Function: ^NodeError node:internal/errors:355:28
+      1  100.0%        LazyCompile: ~onParseError node:internal/url:563:22
+      1  100.0%          t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1  100.0%            Function: ^URL node:internal/url:632:14
+
+     30    1.3%  T __kernelrpc_mach_port_get_refs
+     26   86.7%    t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1    3.8%      LazyCompile: ~writeGeneric node:internal/stream_base_commons:147:22
+      1  100.0%        LazyCompile: ~Socket._writeGeneric node:net:848:42
+      1  100.0%          LazyCompile: ~Socket._write node:net:885:35
+      1  100.0%            LazyCompile: ~writeOrBuffer node:internal/streams/writable:367:23
+      1    3.8%      LazyCompile: ~tagsStrictEqual /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/server_description.js:152:25
+      1  100.0%        LazyCompile: ~equals /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/server_description.js:95:11
+      1  100.0%          LazyCompile: ~serverUpdateHandler /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology.js:313:24
+      1  100.0%            Function: ^<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology.js:473:53
+      1    3.8%      LazyCompile: ~setupWarningHandler node:internal/bootstrap/pre_execution:168:29
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:29:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    3.8%      LazyCompile: ~setStreamTimeout node:internal/stream_base_commons:237:26
+      1  100.0%        LazyCompile: ~makeConnection /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1  100.0%          LazyCompile: ~connect /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1  100.0%            LazyCompile: ~checkServer /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/sdam/monitor.js:143:21
+      1    3.8%      LazyCompile: ~selectServer /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology.js:246:17
+      1  100.0%        LazyCompile: ~connect /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology.js:154:12
+      1  100.0%          LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/mongo_client.js:138:49
+      1  100.0%            LazyCompile: ~<anonymous> node:internal/util:347:24
+      1    3.8%      LazyCompile: ~resolveBSONOptions /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/bson.js:55:28
+      1  100.0%        LazyCompile: ~resolveOptions /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/utils.js:570:24
+      1  100.0%          LazyCompile: ~collection /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/db.js:195:15
+      1  100.0%            LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/connect-mongo/build/main/lib/MongoStore.js:124:42
+      1    3.8%      LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.8%      LazyCompile: ~parse /Users/valentino/Desktop/backend/chat-sql/node_modules/content-type/index.js:106:16
+      1  100.0%        Function: ^setCharset /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/utils.js:248:41
+      1  100.0%          LazyCompile: ~send /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^json /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/response.js:250:25
+      1    3.8%      LazyCompile: ~packageResolve node:internal/modules/esm/resolve:892:24
+      1  100.0%        LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:985:23
+      1  100.0%          LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:1124:30
+      1  100.0%            LazyCompile: ~ObjectDefineProperty.__proto__ node:internal/modules/esm/loader:150:5
+      1    3.8%      LazyCompile: ~getEncodingOps node:buffer:684:24
+      1  100.0%        Function: ^toString node:buffer:790:46
+      1  100.0%          Function: ^decode node:internal/encoding:412:11
+      1  100.0%            Function: ^stringify node:internal/modules/esm/translators:94:19
+      1    3.8%      LazyCompile: ~formatValue node:internal/util/inspect:750:21
+      1  100.0%        LazyCompile: ~inspect node:internal/util/inspect:295:17
+      1  100.0%          LazyCompile: ~createAppender /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/appenders/index.js:74:24
+      1  100.0%            LazyCompile: ~getAppender /Users/valentino/Desktop/backend/chat-sql/node_modules/log4js/lib/appenders/index.js:59:21
+      1    3.8%      LazyCompile: ~emitWarning node:internal/process/warning:118:21
+      1  100.0%        LazyCompile: ~deprecated node:internal/util:109:22
+      1  100.0%          LazyCompile: ~Mongoose.connect /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/lib/index.js:400:38
+      1  100.0%            Script: ~<anonymous> file:///Users/valentino/Desktop/backend/chat-sql/src/server.js:1:1
+      1    3.8%      LazyCompile: ~continueScramConversation /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%        LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/auth/scram.js:85:80
+      1  100.0%          LazyCompile: ~onMessage /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/connection.js:154:14
+      1  100.0%            LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/cmap/connection.js:60:44
+      1    3.8%      LazyCompile: ~connect /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology.js:154:12
+      1  100.0%        LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/mongo_client.js:138:49
+      1  100.0%          LazyCompile: ~<anonymous> node:internal/util:347:24
+      1  100.0%            t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1    3.8%      LazyCompile: ~compression /Users/valentino/Desktop/backend/chat-sql/node_modules/compression/index.js:59:31
+      1  100.0%        LazyCompile: ~handle /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          LazyCompile: ~trim_prefix /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:293:23
+      1  100.0%            LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/router/index.js:280:64
+      1    3.8%      LazyCompile: ~command /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:274:12
+      1  100.0%        LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1  100.0%          LazyCompile: ~prepareHandshakeDocument /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:151:34
+      1  100.0%            LazyCompile: ~performInitialHandshake /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:62:33
+      1    3.8%      LazyCompile: ~cjsPreparseModuleExports node:internal/modules/esm/translators:194:34
+      1  100.0%        LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      1  100.0%          t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1    3.8%      LazyCompile: ~TopologyDescription /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology_description.js:29:16
+      1  100.0%        LazyCompile: ~update /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology_description.js:131:11
+      1  100.0%          LazyCompile: ~serverUpdateHandler /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology.js:313:24
+      1  100.0%            LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology.js:473:53
+      1    3.8%      LazyCompile: ~Socket node:net:294:16
+      1  100.0%        LazyCompile: ~WriteStream node:tty:85:21
+      1  100.0%          LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:45:35
+      1  100.0%            LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:168:19
+      1    3.8%      LazyCompile: ~Server node:_http_server:393:16
+      1  100.0%        LazyCompile: ~createServer node:http:58:22
+      1  100.0%          LazyCompile: ~listen /Users/valentino/Desktop/backend/chat-sql/node_modules/express/lib/application.js:633:29
+      1  100.0%            Script: ~<anonymous> file:///Users/valentino/Desktop/backend/chat-sql/src/server.js:1:1
+      1    3.8%      LazyCompile: ~Server /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/server.js:29:16
+      1  100.0%        LazyCompile: ~createAndConnectServer /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology.js:467:32
+      1  100.0%          LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongodb/lib/sdam/topology.js:173:57
+      1  100.0%            t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1    3.8%      LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%        LazyCompile: ~Module.load node:internal/modules/cjs/loader:992:33
+      1  100.0%          LazyCompile: ~Module._load node:internal/modules/cjs/loader:771:24
+      1  100.0%            LazyCompile: ~<anonymous> node:internal/modules/esm/translators:161:67
+      1    3.8%      LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/sdam/server.js:61:55
+      1  100.0%        Function: ^emit node:events:460:44
+      1  100.0%          LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/sdam/monitor.js:205:52
+      1  100.0%            LazyCompile: ~callback /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:63:31
+      1    3.8%      LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/operations/create_collection.js:75:28
+      1  100.0%        t node::options_parser::OptionsParser<node::PerIsolateOptions>::Parse(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*, node::PerIsolateOptions*, node::OptionEnvvarSettings, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*) const
+      1  100.0%          LazyCompile: ~executeWithoutEncryptedFieldsCheck /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/operations/create_collection.js:74:39
+      1  100.0%            LazyCompile: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mongoose/node_modules/mongodb/lib/operations/create_collection.js:39:10
+      1    3.8%      Function: ~<anonymous> /Users/valentino/Desktop/backend/chat-sql/node_modules/mime/mime.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1080:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1135:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:992:33
+      1    3.8%      Function: ^listOnTimeout node:internal/timers:507:25
+      1  100.0%        Function: ^processTimers node:internal/timers:487:25
+

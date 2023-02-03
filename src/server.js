@@ -22,6 +22,8 @@ import { randomNumbers } from "./randoms.js";
 import { fork } from "child_process";
 import cluster from "cluster";
 import os from "os";
+import compression from "compression";
+import log4js from "log4js";
 
 const argOptions = {default:{p:8080, m:"FORK"}}
 
@@ -48,6 +50,7 @@ const messages = new Contenedor("src/DB/chat.txt");
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"))
+app.use(compression())
 
 const PORT = argumentos.p;
 const MODO = argumentos.m;
@@ -64,6 +67,53 @@ if(MODO === "CLUSTER" && cluster.isPrimary){
     })
 }else{
     const server = app.listen(PORT, () => console.log(`Servidor inicializado en el puerto ${PORT} y proceso ${process.pid}`));
+    //Configurar websocket del lado del servidor
+    const io = new Server(server);
+
+    io.on("connection", async (socket) => {
+    console.log("Nuevo cliente conectado");
+    //Productos
+    //Cada vez que socket se conecte le envio los productos
+    socket.emit("products", await products.getAll());
+    socket.on("newProduct", async (data) => {
+        await products.save(data);
+        io.sockets.emit("products", await products.getAll())
+    });
+
+    //Chat
+    //Enviar los mensajes al cliente
+    socket.emit("messagesChat", await normalizarMensajes());
+    //Recibimos el mensaje
+    socket.on("newMsg", async (data) => {
+        await messages.save(data);
+        //Enviamos los mensajes a todos los sockets que esten conectados.
+        io.sockets.emit("messagesChat", await normalizarMensajes())
+    })
+})
+
+    //Normalizacion
+    const authorSchema = new schema.Entity("authors",{},{idAttribute:"email"})
+    const messageSchema = new schema.Entity("messages",{
+    author:authorSchema
+    })
+
+    //Esquema global
+    const chatSchema = new schema.Entity("chats",{
+        messages:[messageSchema]
+    })
+
+    //Aplicar normalizacion
+    //Funcion que normaliza datos
+    const normalizarData = (data)=>{
+        const dataNormalizada = normalize({id:"chatHistory", messages:data}, chatSchema)
+        return dataNormalizada;
+    }
+    //Funcion que normaliza mensajes
+    const normalizarMensajes = async()=>{
+        const messagesChat = await messages.getAll()
+        const mensajesNormalizados = normalizarData(messagesChat);
+        return mensajesNormalizados;
+    }
 }
 
 
@@ -150,10 +200,31 @@ passport.use("loginStrategy", new LocalStrategy(
     }
 ))
 
+//Configuracion log4js
+log4js.configure({
+    appenders:{
+        consola:{type:"console"},
+        fileWarn:{type:"file", filename:"./src/logs/fileWarn.txt"},
+        fileError:{type:"file", filename:"./src/logs/fileError.txt"}
+    },//Definir las salidas de datos --> Como mostrar y almacenar registros
+    categories:{
+        default:{appenders:["consola"], level:"trace"},
+        warns:{appenders:["consola", "fileWarn"], level:"warn"},
+        errors:{appenders:["consola", "fileError"], level:"error"}
+    }
+})
+
+let logger = log4js.getLogger();
+
+//Funcion para detectar rutas desconocidas
+const unknownEndpoint = (req, res) => {
+    logger = log4js.getLogger("warns")
+    res.status(404).send({ error: 'Ruta desconocida' })
+    logger.warn(`Ruta: ${req.url}, Metodo:${req.method}`)
+}
 
 //Rutas
 app.get("/home", async (req, res) => {
-    //console.log(req.session)
     if(req.session.passport){
         await res.render("home", {
             products: products,
@@ -163,6 +234,7 @@ app.get("/home", async (req, res) => {
     }else{
         res.redirect("/login")
     }
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
 app.get("/api/productos-test", async(req,res)=>{
@@ -181,6 +253,7 @@ app.get("/api/productos-test", async(req,res)=>{
     }else{
         res.redirect("/login")
     }
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
 app.get("/signup", (req,res)=>{
@@ -189,6 +262,7 @@ app.get("/signup", (req,res)=>{
     }else{
         res.render("signup")
     }
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
 app.post("/signup", passport.authenticate("signupStrategy", {
@@ -198,10 +272,12 @@ app.post("/signup", passport.authenticate("signupStrategy", {
     const {mail} = req.body;
     req.session.passport.username = mail;
     res.redirect("/home")
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
 app.get("/failSignup", (req,res)=>{
     res.render("failSignup")
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
 app.get("/login", (req,res)=>{
@@ -210,6 +286,7 @@ app.get("/login", (req,res)=>{
     }else{
         res.render("login")
     }
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
 app.post("/login", passport.authenticate("loginStrategy", {
@@ -219,10 +296,12 @@ app.post("/login", passport.authenticate("loginStrategy", {
     const {mail} = req.body;
     req.session.passport.username = mail;
     res.redirect("/home")
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
 app.get("/failLogin", (req,res)=>{
     res.render("failLogin")
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
 app.get("/logout", (req,res)=>{
@@ -231,6 +310,7 @@ app.get("/logout", (req,res)=>{
         if(error) return res.redirect("/home");
         res.render("logout", {user:user})
     })
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
 app.get("/info", (req,res)=>{
@@ -243,21 +323,45 @@ app.get("/info", (req,res)=>{
         "Process ID": process.pid,
         "Carpeta": process.cwd()
     })
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
+})
+
+app.get("/info-console", (req,res)=>{
+    console.log(`Argumentos de entrada: ${process.argv.slice(2)},
+    Sistema operativo : ${process.platform},
+    Version Node: ${process.version},
+    Memoria reservada : ${process.memoryUsage()},
+    Path: ${process.title},
+    Process ID: ${process.pid},
+    Carpeta: ${process.cwd()}`)
+    res.json({
+        "Argumentos de entrada": process.argv.slice(2),
+        "Sistema operativo" : process.platform,
+        "Version Node": process.version,
+        "Memoria reservada" : process.memoryUsage(),
+        "Path": process.title,
+        "Process ID": process.pid,
+        "Carpeta": process.cwd()
+    })
+    logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
 app.get("/api/randoms", (req,res)=>{
-    let {cant} = req.query
-    const child = fork("src/child.js")
-    child.on("message",(childMsg)=>{
-        if(childMsg == "Hijo listo"){
-            child.send("Iniciar")
+        //let {cant} = req.query
+        //const child = fork("src/child.js")
+        //child.on("message",(childMsg)=>{
+        //    if(childMsg == "Hijo listo"){
+        //        child.send("Iniciar")
+        //    }else{
+        if(cant){
+            res.json(randomNumbers(cant))
         }else{
-                if(cant){
-                    res.json(randomNumbers(cant))
-                }else{
-                    cant = 100000000;
-                    res.json(randomNumbers(cant));
-                }
+            cant = 100000000;
+            res.json(randomNumbers(cant));
         }
-    })
+        //    }
+        //})
+        logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
+
+app.use(unknownEndpoint)
