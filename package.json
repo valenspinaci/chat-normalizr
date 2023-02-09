@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "createTables": "node src/scripts/createTables.js",
-    "start": "nodemon src/server.js",
+    "start": "node src/server.js",
     "start-0x": "0x src/server.js",
     "test": "node src/benchmark.js"
   },
