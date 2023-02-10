@@ -52,7 +52,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"))
 app.use(compression())
 
-const PORT = argumentos.p;
+const PORT = process.env.PORT || argumentos.p;
 const MODO = argumentos.m;
 
 //Logica del cluster
