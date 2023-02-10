@@ -1,7 +1,7 @@
 import express, { query } from "express";
 import handlebars from "express-handlebars";
-import {Server} from "socket.io"
-import {ContenedorMysql} from "./managers/ContenedorMysql.js"
+import {Server} from "socket.io";
+import {ContenedorMysql} from "./managers/contenedorMysql.js";
 import { options } from "./config/databaseConfig.js"
 import path from 'path';
 import { fileURLToPath } from 'url';
