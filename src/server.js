@@ -224,7 +224,7 @@ const unknownEndpoint = (req, res) => {
 }
 
 //Rutas
-app.get("/home", async (req, res) => {
+app.get("/", async (req, res) => {
     if(req.session.passport){
         await res.render("home", {
             products: products,
