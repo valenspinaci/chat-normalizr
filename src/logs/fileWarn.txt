@@ -7,3 +7,12 @@
 [2023-02-02T19:40:46.686] [WARN] warns - Ruta: /favicon.ico, Metodo:GET
 [2023-02-02T19:42:42.546] [WARN] warns - Ruta: /favicon.ico, Metodo:GET
 [2023-02-02T20:28:47.471] [WARN] warns - Ruta: /, Metodo:GET
+[2023-02-14T10:23:07.589] [WARN] warns - Ruta: /home, Metodo:GET
+[2023-02-14T10:23:11.308] [WARN] warns - Ruta: /favicon.ico, Metodo:GET
+[2023-02-14T10:26:30.286] [WARN] warns - Ruta: /favicon.ico, Metodo:GET
+[2023-02-14T10:26:32.954] [WARN] warns - Ruta: /favicon.ico, Metodo:GET
+[2023-02-14T10:36:02.567] [WARN] warns - Ruta: /favicon.ico, Metodo:GET
+[2023-02-14T10:40:01.012] [WARN] warns - Ruta: /favicon.ico, Metodo:GET
+[2023-02-14T10:44:00.273] [WARN] warns - Ruta: /s, Metodo:GET
+[2023-02-14T10:45:36.076] [WARN] warns - Ruta: /home, Metodo:GET
+[2023-02-14T10:47:28.810] [WARN] warns - Ruta: /favicon.ico, Metodo:GET

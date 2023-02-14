@@ -25,11 +25,11 @@ import os from "os";
 import compression from "compression";
 import log4js from "log4js";
 
-const argOptions = {default:{p:8080, m:"FORK"}}
+const argOptions = {default:{p:8080, m:"FORK"}};
 
-const argumentos = parseArgs(process.argv.slice(2), argOptions)
+const argumentos = parseArgs(process.argv.slice(2), argOptions);
 
-faker.locale = "es"
+faker.locale = "es";
 
 //Conexion a base mongoose
 mongoose.connect(`mongodb+srv://valenspinaci:Valentino26@backend-coder.ksqybs9.mongodb.net/proyectoFinal?retryWrites=true&w=majority`,{
@@ -161,14 +161,18 @@ passport.use("signupStrategy", new LocalStrategy(
         passReqToCallback: true,
         usernameField: "mail"
     },
-    async (req, username, password, done)=>{
-        const cryptoPassword = await bcrypt.hash(password,8)
+    async (req, username, password,done)=>{
+        const cryptoPassword = await bcrypt.hash(password,8);
         userModel.findOne({mail:username},(error, user)=>{
             if(error) return done(error, false, {message:"Hubo un error"});
             if(user) return done(error, false, {message:"El usuario ya existe"})
             const newUser = {
                 mail: username,
-                password: cryptoPassword
+                password: cryptoPassword,
+                name:req.body.name,
+                adress: req.body.adress,
+                age:req.body.age,
+                phone:req.body.phone
             };
             userModel.create(newUser, (error, userCreated)=>{
                 if(error) return done (error, null, {message:"El usuario no pudo ser creado"})
@@ -258,7 +262,7 @@ app.get("/api/productos-test", async(req,res)=>{
 
 app.get("/signup", (req,res)=>{
     if(req.session.passport){
-        res.redirect("/home")
+        res.redirect("/")
     }else{
         res.render("signup")
     }
@@ -271,7 +275,7 @@ app.post("/signup", passport.authenticate("signupStrategy", {
 }) ,(req,res)=>{
     const {mail} = req.body;
     req.session.passport.username = mail;
-    res.redirect("/home")
+    res.redirect("/")
     logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
@@ -282,7 +286,7 @@ app.get("/failSignup", (req,res)=>{
 
 app.get("/login", (req,res)=>{
     if(req.session.passport){
-        res.redirect("/home")
+        res.redirect("/")
     }else{
         res.render("login")
     }
@@ -295,7 +299,7 @@ app.post("/login", passport.authenticate("loginStrategy", {
 }) ,(req,res)=>{
     const {mail} = req.body;
     req.session.passport.username = mail;
-    res.redirect("/home")
+    res.redirect("/")
     logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
@@ -364,4 +368,4 @@ app.get("/api/randoms", (req,res)=>{
         logger.info(`Ruta: ${req.route.path}, Metodo:${req.route.stack[0].method}`)
 })
 
-app.use(unknownEndpoint)
+app.use(unknownEndpoint);
